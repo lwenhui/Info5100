@@ -1,0 +1,241 @@
+/**Name : Wenhui Liu
+ **NEUID 001816338
+ **assienment1 for 5100
+ */
+
+1. Hiking
+
+Participant
+	Data : name, phoneNumber, creditCard, driveLicence
+	Behavior : buyTicket, selectCar,rentCar, fillGas, orderFood,eatFood, driveCar, searchRoute
+
+CarRentCompany
+	Data : zipcar
+	Behavior : authorize
+
+Car
+	Data : plateNumber, color, rentPrice, brand, year, size
+	Behavior :
+
+Location
+	Data : mountainRainier
+	Behavior : authorize
+
+Resturant
+	Data : McDonald's
+	Behavior : provideFood
+
+participant david,
+CarRentCompany zipcar，
+location mountainRainier,
+Car myRentCar
+
+david.buyTicket -> data, name, creditCard, phoneNumber, mountainRainier : ticketCode
+
+david.loginCarRentCompany -> zipcar : authorize
+if (authorize is true)
+	david.selectACar -> rentData, size, priceRange :Collection of matched Car
+
+	pageNumber = 1;
+	Loop
+		if david.findACar is true
+			break
+		else
+			pageNumber = pageNumber + 1
+		end
+	end
+	myRentCar = Car
+	david.payRentFee -> creditCard, address, drivelicence, myRentCar : addressOfCar, plateNumberOfCar
+
+	david.getCar -> addressOfCar, plateNumberOfCar : authorize
+	if authorized is true
+		david.driveCar
+		if david.gasIsEnough
+			david.driveCar
+		else
+			david.findNearestGasStation -> currentAddress : gasStationAddress, route
+			david.fillGas -> creditCard
+
+		if david.hungry
+			david.findAResturant -> currentAddress, flavor, priceRange : nameOfReaturant, addressOfresturant
+			david.orderFood -> foodType, foodName, creditCard : food
+			david.eatFood -> food
+		else
+			david.dontNeedToEat
+		end
+
+		if david.isArrived
+			david.showTickets -> ticketCode : authorize
+			if authorize is true
+				david.enjoyHiking
+			else
+				david.cantHiking
+			end
+		else
+			david.driveCar
+		end
+
+	else
+		david.cantDriveCar
+	end
+else
+	david.cantRentCar
+end
+
+2. Organise a career fair(Suppose you are the organiser)
+
+Teacher
+	Data : email, NEUID, name, officeAdress
+	Behavior : bookClassroom, contactCompany, informStudents
+
+Company
+	Data : amazon, google, facebook, linkin
+	Behavior : confirm, interview, sendOffer
+
+Student
+	Data : name, email, NEUID, resume
+	Behavior :	register, beInterviewed
+
+Location
+	Data : classroom
+	Behavior :
+
+Teacher nicole,
+Student[] students,
+Company[] {amazon, google, facebook, linkin}
+Location classroom106
+
+nicole.loginMyNEU -> NEUID, password : authorize
+if authorize is true
+	nicole.searchClassroom -> date, size : Collection of classroom
+	classroom106 = classroom
+	nicole.bookClassroom -> date, classroom106 : confirmation
+end
+
+companyNumber = 0
+index = 0
+Loop
+    if companyName is empty
+    	break
+    end
+	nicole.contactCompany -> classroom106, date, companyName : confirmation
+	if confirmation is true
+		nicole.addCompanyToList
+	end
+end
+nicole.informStudents -> classroom106, date, schedule, Company[] 
+students.register -> name, email, NEUID : schedule, date
+
+Loop
+	if student is empty
+		break
+	end
+	student.arrive -> classroom106, schdule, resume
+	if company.offerInterview
+		student.beInterviewed -> resume : response
+		if response is success
+			company.sendOffer -> name, email
+		else
+			student.chooseAnotherCompany -> resume
+		end
+	else
+		student.chooseAnotherCompany -> resume
+	end
+end
+
+
+3. Order Pizza from Pizza Hut
+
+Customer
+	Data : name, address, zipcode, phone
+	Behavior : buy, search, receiveOrder
+
+Creditcard
+	Data : number, name, company, expiry, security code
+	Behavior :
+
+CreditcardCompany
+	Data : 
+	Behavior : authorize
+
+Shop
+	Data : address, name, phone
+	Behavior : cook, scheduleOrder, delivery
+
+Food
+	Data : size, flavor, prize
+	Behavior :
+
+OrderPizzaFromPizzaHut
+
+	Customer david,
+	Creditcard card,
+	CreditcardCompany visa,
+	Shop pizzaHut,
+	Food pizza
+
+	david.logAccount -> pizzaHut : authorize
+	if authorize is true
+		david.searchForPizza -> flavor, price ： Collection of food
+		pizza = Food
+		david.purchasePizza -> pizza, card, address, pizzaHut : deliverConfirmation
+		response = deliverConfirmation
+		pizzaHut.scheduleOrder -> pizza, address
+		pizzaHut.cook -> flavor : pizza
+		pizzaHut.delivery -> pizza, address, phone, name 
+
+		david.receiveOrder -> pizza
+	else
+		david.cantOrderPizza
+
+4. Design a code sharing platform (eg: Github).
+Account
+	Data : userName, password, emailAddress
+	Behavior : logIn, logOut, changePassword
+
+	logIn -> userName, password : authorize
+	changePassword -> userName, emailAddress, newPassword
+
+Profile
+	Data : repositories, stars, followers, following
+	Behavior : check, editProfile
+
+	check -> repositories, stars, followers, following : info
+	editProfile -> name, email, bio, URL, company, location : response
+
+Repository
+	Data : code, issues, PullRequests, wiki 
+	Behavior: uploadCode, cloneRepository, forkRepository, creatNewIssue, replyIssue, viewPullRequests, processPullRequests, addWiki, viewwiki
+
+	uploadCode -> code, URL, command
+	cloneRepository -> URL, command : repository
+	forkRepository -> repository : newRepository
+	creatNewIssue -> title, info : newIssue
+	replyIssue -> existingIssue, info
+	processPullRequests -> pullRequest : response
+	addWiki -> title, info : newWiki
+
+
+5. Design a soft-drink/snacks vending machine.
+CommandScreen
+	Data : keyboard, screen 
+	Behavior : showGoodsDetail, matchNumberWithGood, caculatePrice, cancelOrder
+
+	showGoodsDetail -> : goodsInfo
+	matchNumberWithGood -> userInput, goodsID : price, amountOfGoods
+	caculatePrice -> goodsInfo, goodsID, price, orderAmount : totalPrice
+
+Storage
+	Data : brand, name, goodsID, amountOfGoods
+	Behavior: provideGoods
+	provideGoods -> brand, name, goodsID, orderAmount : goods
+
+Bill
+	Data : creditCardSlot, cashSlot, coinSlot, cashBackSlot
+	Behavior : acceptCard, acceptCash, accepyCoin, identifyValueOfMoney, returnChange, authorizeCreditcard
+
+	acceptCard -> creditCard : authorize
+	acceptCash -> cash : totalCash
+	accepyCoin -> coin : totalCoin
+	identifyValueOfMoney -> totalCash, totalCoin : totalMoney
+	returnChange -> totalMoney, totalPrice : change
