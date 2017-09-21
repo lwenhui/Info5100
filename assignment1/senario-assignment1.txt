@@ -2,6 +2,11 @@
  **NEUID 001816338
  **assienment1 for 5100
  */
+ 
+ /* Good Work
+  * Score 9.5
+  * Your understanding on Data and behaviors is good. In pseudo code you are using 'Loop' without any condition.
+  */
 
 1. Hiking
 
