@@ -36,23 +36,15 @@ class Salary{
 //2. Write a java function that adds all the digits of an integer until it is single digit.
 class AddDigits {
 	public int addDigits( int input){
-		if (input == 0) {
-			return 0;
+		while (input > 10) {
+			int sum = 0;
+			while (input > 0) {
+				sum += input % 10;
+				input /= 10;
+			}
+			input = sum;
 		}
-
-		int result = 0;
-		int digit = 0;
-		while (input != 0) {
-			digit = input % 10;
-			result = (result * 10 + digit) % 9;
-			input /= 10;
-		}
-
-		if (result == 0) {
-			return 9;
-		} else {
-			return result;
-		}
+		return input;
 	}
 }
 
@@ -227,7 +219,7 @@ public class Assignment2 {
 
 		//int result = digit.addDigits(120);
 		int result = digit.addDigits(1239);
-		//int result = digit.addDigits(39);
+		//int result = digit.addDigits(9);
 		System.out.println("2. The result of add digits of 1239 is " + result);
 
 		System.out.println();
