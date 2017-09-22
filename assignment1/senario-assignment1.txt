@@ -4,8 +4,8 @@
  */
  
  /* Good Work
-  * Score 9.5
-  * Your understanding on Data and behaviors is good. In pseudo code you are using 'Loop' without any condition.
+  * Score 10
+  * Your understanding on Data and behaviors is good.
   */
 
 1. Hiking
