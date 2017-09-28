@@ -1,0 +1,23 @@
+
+1. 
+1-1 There are two constructors which have the same signature of Book(int). We should remove one.
+1-2 The method setName returns a string, so when define it, it should have a return type. The correct one should be :  public String setName(String name) .
+    On the other side, the method setName always means to set the value of attributes. So here it is better to use "this.name = name;" instead of "return name;"
+    In sum, the correct one of this method should be :
+    public void setName(String name) {
+    	this.name = name;
+    }
+
+ 2.
+ The method getTime() returns a string, so when define this method, the return value should be "String" instead of "void".
+ In sum, the correct one is :
+ class Clock {
+ 	String time;
+
+ 	String getTime(){
+ 		return time;
+ 	}
+ 	void setTime(String t){
+ 		time = t;
+ 	}
+ }
