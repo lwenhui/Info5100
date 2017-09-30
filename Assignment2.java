@@ -1,3 +1,6 @@
+/* good work
+ * score 9 + extra credit 3.5; Total score 10
+ */
 import java.util.ArrayList;
 
 //1. Write a java function to calculate the salary of an employee based on the following rules
@@ -10,7 +13,7 @@ class Salary{
 	private static final double SALARYRATE1 = 15.0;
 	private static final double SALARYRATE2 = 15.0 * 1.5;
 	private static final double SALARYRATE3 = 15.0 * 2;
-
+	// score 2
 	public double employeeSalary (double hours) {
 		double amount = 0;
 
@@ -35,8 +38,9 @@ class Salary{
 
 //2. Write a java function that adds all the digits of an integer until it is single digit.
 class AddDigits {
-	public int addDigits( int input){
-		while (input > 10) {
+	// score 1
+	public int addDigits( int input){ // for input = 37, the expected output is 1. your output is 10
+		while (input > 10) { // input >=10
 			int sum = 0;
 			while (input > 0) {
 				sum += input % 10;
@@ -50,6 +54,7 @@ class AddDigits {
 
 //	3. Write a java function to print all perfect number between 1 and n.
 class PerfectNumber {
+	// score 2
 	public  void printPerfectNumbers(int n){
 		if (n == 0) {
 			System.out.println("Input number should be larger than 1");
@@ -77,6 +82,7 @@ class PerfectNumber {
 }
 
 //4.Write a java class called pizza with (Add detail as needed)
+//score 2 + extra credit 0.5
 class Pizza {
 	private String pizzaType;
 	private double unitPrice;
@@ -142,6 +148,7 @@ class PizzaOrder {
 		return this.nums;
 	}
 }
+// score 2 + extra credit 1
 class Customer {
 	private String name;
 	private PizzaOrder[] order;
@@ -177,6 +184,7 @@ class Customer {
 
 //6. Write a Java program that generates an isosceles right angled triangle made of asterisks. 
 class PrintIsoscelesTriangle {
+	//extra credit 2
 	public void printIsoscelesTriangle(int n) {
 		if(n < 2) {
 			System.out.println("Length should be larger than 1");
