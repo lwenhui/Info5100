@@ -1,3 +1,4 @@
+// score 8 + extra credit 2
 import java.util.Arrays;
 
 public class Assignment3 {
@@ -73,7 +74,7 @@ public class Assignment3 {
 }
 
 //3. Write a Java function to remove vowels in a string. 
-class RemoveVowels {
+class RemoveVowels { // score 2
 	public String removeVowelsFromString(String input){
 		if (input == null) {
 			return null;
@@ -86,7 +87,8 @@ class RemoveVowels {
 	        if (vowels.contains(inputChar[i] + "")) {
 	        	continue;
 	        }
-	        result += inputChar[i];
+	        result += inputChar[i]; // you are using concatenation in a loop. remember that strings are immutable.
+		// by this way you are creating new object every time. Try using StringBuilder.
 	    }
 	    return result;
     }
@@ -94,7 +96,7 @@ class RemoveVowels {
 
 //4. Write a java function to check if two strings are Anagrams or not.
 class AngramNumber {
-	public boolean checkIfTwoStringsAreAnagrams(String s1, String s2){
+	public boolean checkIfTwoStringsAreAnagrams(String s1, String s2){ // score 2
 		if (s1 == null || s2 == null) {
 			return true;
 		}
@@ -113,7 +115,7 @@ class AngramNumber {
 }
 
 //5. Create a calculator that can perform the following features.
-class Calculator {
+class Calculator { // score 4 + extra credit 2
 	public double add (double parameter1, double parameter2) {
 		return parameter1 + parameter2;
 	}
