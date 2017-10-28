@@ -1,5 +1,5 @@
 public class ReverseEvenIndices {
-    public static void main(String args[]) {
+    public static void main(String args[]) { // score 6
         ReverseEvenIndices reverse = new ReverseEvenIndices();
         //int[] nums = {9, 4, 8, 7, 5, 1, 3};
         //int[] nums = {6, 4, 1, 0, 3, 2};
