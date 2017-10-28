@@ -1,3 +1,4 @@
+// extra credit 10
 import java.util.ArrayList;
 
 public class Maze {
