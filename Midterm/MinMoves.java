@@ -1,4 +1,4 @@
-public class MinMoves {
+public class MinMoves { // score 7
     public static void main(String args[]) {
         int[] nums = {3, 6, 7};
         MinMoves move = new MinMoves();
