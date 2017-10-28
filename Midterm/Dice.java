@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Dice {
-    public static void main(String args[]) {
+    public static void main(String args[]) { // score 10
         Dice dice = new Dice();
 //        int m = 22;
 //        int n = 20;
