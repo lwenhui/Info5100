@@ -1,4 +1,4 @@
-public class ArrangeCoins {
+public class ArrangeCoins { // score 7
     public static void main(String args[]) {
         ArrangeCoins coins = new ArrangeCoins();
         //int n = Integer.MAX_VALUE;
