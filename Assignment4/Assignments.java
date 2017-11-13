@@ -1,5 +1,8 @@
+/* good work
+ * score 10+ extra credit 2; Total score 10
+ */
 //1.Reformate license key.
-class FormateLicenseKey {
+class FormateLicenseKey { // score 2
 	public char toUpper(char input) {
 		if (input >= 'a' && input <= 'z') {
 			input = (char)(input - 32);
@@ -32,22 +35,22 @@ class FormateLicenseKey {
 }
 
 //2.paper&scissor&rock
-class Tool {
-	public boolean WIN = true;
+class Tool { // score 2
+	public boolean WIN = true; // don't declare any variable in the class level unless it is a meaningful data.
 	public boolean FAIL = false;
 	protected int strength;
 	protected char type;
 	public void setStrength(int strength) {
 		this.strength = strength;
 	}
-	public boolean doubleStrengthFight (Tool tool) {
+	public boolean doubleStrengthFight (Tool tool) { // access is recommended to be private
 		if (this.strength * 2 > tool.strength) {
 			return WIN;
 		} else {
 			return FAIL;
 		}
 	}
-	public boolean halfStrengthFight (Tool tool) {
+	public boolean halfStrengthFight (Tool tool) { // access is recommended to be private
 		if (this.strength > tool.strength * 2) {
 			return WIN;
 		} else {
@@ -103,7 +106,7 @@ class Scissors extends Tool {
 }
 
 //3.IPAddress
-class IpAddress {
+class IpAddress { // score 2
 	private String dottedDecimal;
 	private int firstOctet;
 	private int secondOctet;
@@ -160,7 +163,7 @@ class Student{
 		return this.id;
 	}
 }
-class Course {
+class Course { // score 2
 	private final static int MAX_STUDENT_NUMBER = 10;
 	private String name;
 	private int numberOfStudent;
@@ -180,7 +183,7 @@ class Course {
 		}
 		return false;
 	}
-	public void registerStudent (Student student) {
+	public void registerStudent (Student student) { // check the condition of a single student registering multiple times
 		if (!this.isFull()) {
 			this.student[numberOfStudent] = student; /////////
 			this.numberOfStudent++;
@@ -201,7 +204,7 @@ class Course {
 }
 
 //5.Int to roman
-class IntToRoman {
+class IntToRoman { // score 2
 	public String intToRoman(int num) {
 		String result = "";
 		if (num < 0) {
@@ -224,7 +227,7 @@ class IntToRoman {
 }
 
 //Extra credit.Find median
-class FindMedian{
+class FindMedian{ // extra credit 2
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int len = nums1.length + nums2.length;
 		if(len % 2 == 1) {
