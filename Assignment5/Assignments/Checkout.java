@@ -26,6 +26,7 @@ public class Checkout {
 		return new BigDecimal(totalCost() * DessertShoppe.TAX_RATE).setScale(0,BigDecimal.ROUND_HALF_UP).intValue();
 	}
 	public String toString() {
+		// candy's weight is not formatted correctly and its displaying a huge floating point in display
 		StringBuilder display = new StringBuilder();
 
 		int len = DessertShoppe.NAME_OF_SHOP.length();
