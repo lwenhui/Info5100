@@ -1,3 +1,6 @@
+/* Good Work
+ * Score 9.5 + extra credit 2; Total score 10
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
