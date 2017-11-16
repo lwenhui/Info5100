@@ -1,3 +1,7 @@
+/* Good Work
+ * Score 20
+ * you are not dispalying previously guessed letters
+ */
 import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
@@ -9,7 +13,7 @@ public class Hangman {
 	private ArrayList<Character> correctList = new ArrayList<Character>();
 	private ArrayList<Character> wrongList = new ArrayList<Character>();
 	private int wordLength = 0;
-	Scanner input = new Scanner(System.in);
+	Scanner input = new Scanner(System.in); // access should be private
 	private static ArrayList<String> words;
 
 	//Initialises the words list
