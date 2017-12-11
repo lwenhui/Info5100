@@ -1,3 +1,6 @@
+/* Awesome work
+ * Score 10 + extra credit 2; Total score 10
+ */
 import java.io.*;
 import java.util.*;
 
