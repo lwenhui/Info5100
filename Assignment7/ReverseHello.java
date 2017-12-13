@@ -1,4 +1,4 @@
-public class ReverseHello {
+public class ReverseHello { // score 2
     public static void main(String args[])throws InterruptedException  {
         creatThread(1);
     }
