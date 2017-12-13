@@ -1,6 +1,6 @@
 public class MaxValue{
 
-    public static int findMaxValue(int[] arr) throws InterruptedException {
+    public static int findMaxValue(int[] arr) throws InterruptedException { // score 2
         int len = arr.length;
         int max = Integer.MIN_VALUE;
 
