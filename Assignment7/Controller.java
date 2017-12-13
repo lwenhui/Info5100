@@ -1,4 +1,4 @@
-public class Controller extends Thread {
+public class Controller extends Thread { // score 2
     private Device device;
     private Sensor heat;
     private Sensor pressure;
