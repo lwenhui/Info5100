@@ -1,3 +1,6 @@
+/* Good Work
+ * Total score 10
+ */
 import java.util.ArrayList;
 
 public class Assignment7 {
@@ -16,7 +19,7 @@ public class Assignment7 {
 }
 ////4. Pascal’s triangle
 class PascalTriangle {
-    public void printPascalTriangle(int n){
+    public void printPascalTriangle(int n){ // score 2
         //your code
         if (n < 1) {
             return;
@@ -47,6 +50,7 @@ class PascalTriangle {
 class Partition{
     //Method1: used for when arr's length and sum are not very big
     public boolean findPartition (int arr[]) {
+        
         //your code
         if (arr == null || arr.length == 0) {
             return true;
