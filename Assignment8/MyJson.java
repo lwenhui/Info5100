@@ -1,3 +1,6 @@
+/* GOod work
+ * Total score 10
+ */
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
