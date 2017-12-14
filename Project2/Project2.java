@@ -1,3 +1,6 @@
+/* Good WOrk
+ * Score 20
+ */
 import java.util.Scanner;
 
 public class Project2 {
